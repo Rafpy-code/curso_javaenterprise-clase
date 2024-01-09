@@ -16,6 +16,11 @@ public class FrontController extends HttpServlet {
 		String urlView="";
 		
 		switch(op) {
+			case "doLogin":
+				request.getRequestDispatcher("EntradaController").include(request, response);
+				urlView="menu.html";
+				break;
+			
 			case "doGuardar":
 				request.getRequestDispatcher("GuardarController").include(request, response);
 				urlView="nuevo.html";
