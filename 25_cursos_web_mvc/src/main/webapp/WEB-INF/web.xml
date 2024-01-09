@@ -3,6 +3,15 @@
   <display-name>25_cursos_web_mvc</display-name>
   <welcome-file-list>
     <welcome-file>menu.html</welcome-file>
-    
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>FrontController</display-name>
+    <servlet-name>FrontController</servlet-name>
+    <servlet-class>controllers.FrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FrontController</servlet-name>
+    <url-pattern>/FrontController</url-pattern>
+  </servlet-mapping>
 </web-app>

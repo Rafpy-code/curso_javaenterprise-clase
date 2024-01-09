@@ -1,34 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="model.Curso,java.util.ArrayList"%>
+	pageEncoding="ISO-8859-1" import="model.Curso,java.util.ArrayList"%>
+<%@taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<!-- los siguiente metas son para no- cache -->
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+<meta http-equiv="Pragma" content="no-cache">
 <title>Insert title here</title>
 </head>
 <body>
 	<center>
-		<h1>Cursos cuyo precio máximo es <%=request.getParameter("precio") %></h1>
+		<h1>
+			Cursos cuyo precio máximo es ${param.precio }</h1>
 		<br>
+		<c:if test="${!empty requestScope.cursos}">
 		<table border="1">
 			<tr>
 				<th>Nombre</th>
 				<th>Duración</th>
 				<th>Precio</th>
 			</tr>
-			<%--recuperamos el arraylist de cursos que está en un atributo de petición,
-			lo recorremos y mostramos una fila por cada curso --%>
-			<%ArrayList<Curso> cursos=(ArrayList<Curso>)request.getAttribute("cursos"); 
-			for(Curso c:cursos){%>
-				<tr>
-					<td><%=c.getNombre() %></td>
-					<td><%=c.getDuracion() %></td>
-					<td><%=c.getPrecio() %></td>
-				</tr>
-			<%} %>
+
+			<c:forEach var="curso" items="${requestScope.cursos}" varStatus="indice" >
+			
+			<tr>
+				<td>${curso.nombre}</td>
+				<td>${curso.duracion}</td>
+				<td>${curso.precio}</td>
+			</tr>
+			</c:forEach>			
 		</table>
-		<br>
-		<a href="menu.html">volver</a>
+		</c:if>
+		<c:if test="${empty requestScope.cursos}">
+			<h1>No hay cursos con ese criterio</h1>
+		</c:if>
+		<br> <a href="FrontController?operation=toMenu">volver</a>
 	</center>
 </body>
 </html>
