@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- los siguiente metas son para no- cache -->
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<title>Crear Producto</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>	
+<div class="inicio">	
+	<form action="FrontController?operation=doAlta" method="post">
+		<section class="form__register">
+			<h2 class="form__title">Añadir nuevo producto</h2>
+			<div class="form__inputs">
+            	<div class="form__group">
+					<input class="form__input" type="text" name="nombre" placeholder=" ">
+					<label class="form__label">Nombre del producto:</label>
+					<span class="form__bar"></span>
+				</div>
+				<div class="form__group">
+					<input class="form__input" type="text" name="precio" placeholder=" "> 
+					<label class="form__label">Precio del producto 35.72:</label>
+					<span class="form__bar"></span>
+				
+				</div>
+				<div class="form__group">
+					<input class="form__input" type="text" name="categoria" placeholder=" "> 
+					<label class="form__label">Categoría del producto:</label>
+					<span class="form__bar"></span>
+				</div>
+					<div>
+					<input class="form__submit" type="submit" value="GUARDAR">
+					<a class="form__submit" href="FrontController?operation=toInicio">INICIO</a>
+				</div>
+				</div>
+			</div>
+		</section>	
+	</form>		
+	</div>
+</body>
+</html>
