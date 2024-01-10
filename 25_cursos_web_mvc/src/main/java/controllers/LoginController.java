@@ -19,8 +19,10 @@ public class LoginController extends HttpServlet {
 
 		UsuariosService service = new UsuariosService();
 
-		service.autenticar(request.getParameter("usuario"), request.getParameter("password"));
+		if (service.autenticar(request.getParameter("usuario"), request.getParameter("password"))) {
 			request.setAttribute("usuario", request.getParameter("usuario"));
-		
+		} else {
+			request.setAttribute("usuario", null);
+		}
 	}
 }

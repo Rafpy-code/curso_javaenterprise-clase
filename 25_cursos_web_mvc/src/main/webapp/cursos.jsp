@@ -39,7 +39,9 @@
 		<c:if test="${empty requestScope.cursos}">
 			<h1>No hay cursos con ese criterio</h1>
 		</c:if>
-		<br> <a href="FrontController?operation=toMenu">volver</a>
+		<div>
+			<br><a href="FrontController?operation=toMenu">MENU</a>
+		</div>
 	</center>
 </body>
 </html>

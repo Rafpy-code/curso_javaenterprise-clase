@@ -17,10 +17,14 @@ public class FrontController extends HttpServlet {
 		
 		switch(op) {
 			case "doLogin":
+				if(request.getParameter("usuario") != null && !request.getParameter("usuario").isEmpty()) {
 				request.getRequestDispatcher("LoginController").include(request, response);
 				urlView="menu.html";
-				break;
-			
+				}else {
+					request.getRequestDispatcher("login.html").forward(request, response);
+					urlView="";
+				}
+				break;			
 			case "doGuardar":
 				request.getRequestDispatcher("GuardarController").include(request, response);
 				urlView="nuevo.html";
