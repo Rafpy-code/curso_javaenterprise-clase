@@ -9,18 +9,15 @@
 <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <title>Gestor de cursos MVC</title>
-<link rel="stylesheet" href="login.css" />
+<link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-	<form action="" method="post">
+	<form action="FrontController?operation=doLogin" method="post">
 		<div>
 			<h2>Login</h2>
 			<input type="text" name="usuario" placeholder="Ingrese su usuario" />
 			<input type="password" name="password" placeholder="Ingrese su contraseña" />
-			<div class="check_label">
-				<label>Recordar Usuario:</label> 
-				<input type="checkbox" name="recordar" value="1" />
-			</div>
+			
 			<input type="submit" value="Entrar" />
 		</div>
 	</form>

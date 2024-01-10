@@ -17,7 +17,7 @@ public class FrontController extends HttpServlet {
 		
 		switch(op) {
 			case "doLogin":
-				request.getRequestDispatcher("EntradaController").include(request, response);
+				request.getRequestDispatcher("LoginController").include(request, response);
 				urlView="menu.html";
 				break;
 			

@@ -1,9 +1,7 @@
 package controllers;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 //import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,14 +17,14 @@ public class LoginController extends HttpServlet {
 			throws ServletException, IOException {
 
 		UsuariosService service = new UsuariosService();
-		RequestDispatcher dispatcher;
 
 		if (service.autenticar(request.getParameter("usuario"), request.getParameter("password"))) {
 			// Crear una sesión de usuario
 			HttpSession session = request.getSession(true);
 			// Establecer atributos de sesión
 			request.setAttribute("usuario", request.getParameter("usuario"));
-			dispatcher = request.getRequestDispatcher("menu_gestor_cursos.jsp");
+		}else {
+			HttpSession session = request.getSession(false);
 		}
 	}
 }
