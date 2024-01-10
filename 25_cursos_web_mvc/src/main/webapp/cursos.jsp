@@ -10,7 +10,8 @@
 <meta http-equiv="Last-Modified" content="0">
 <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
 <meta http-equiv="Pragma" content="no-cache">
-<title>Insert title here</title>
+<link rel="stylesheet" href="estilos.css">
+<title>Lista</title>
 </head>
 <body>
 	<center>
@@ -38,7 +39,9 @@
 		<c:if test="${empty requestScope.cursos}">
 			<h1>No hay cursos con ese criterio</h1>
 		</c:if>
-		<br> <a href="FrontController?operation=toMenu">volver</a>
+		<div>
+			<br><a href="FrontController?operation=toMenu">MENU</a>
+		</div>
 	</center>
 </body>
 </html>
