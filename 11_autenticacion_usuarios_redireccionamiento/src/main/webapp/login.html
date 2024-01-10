@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Redireccionamiento</title>
+<style>
+form {
+	width: 300px;
+	height: 300px;
+	margin: 50px auto;
+	border: 1.5px solid darkblue;
+	box-shadow: 7px 7px 10px;
+	padding: 10px;
+}
+
+input {
+	margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+	<form action="LoginServlet" method="get">
+		<h2>Log in</h2>
+		<div>
+			<input type="text" name="usuario" placeholder="Ingrese su usuario" />
+			<input type="password" name="pwd" placeholder="Ingrese su contraseña" />
+			<input type="submit" value="Entrar" />
+		</div>
+	</form>
+</body>
+</html>

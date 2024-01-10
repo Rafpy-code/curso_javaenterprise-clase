@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Homenaje&family=Lobster&display=swap')
+	;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--background: linear-gradient(to right top, #153b734f, #00bf737c, #a6eb1270);
+	--url-img: url(./img/zhangzui-Pf23Y30hD68-unsplash.jpg);
+	--bradius: border-radius: 3px;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	font-family: 'Lobster', 'Homenaje', sans-serif;
+	letter-spacing:1.5px;
+	background-image: var(--background), var(--url-img);
+	background-position: center;
+	background-size: cover;
+}
+
+.formulario {
+	width: 400px;
+	font-size: 1.5rem;
+	margin: 40px auto;
+	padding: 20px;
+}
+
+h2 {
+	font-size: 2rem;
+	text-shadow: 3px 3px 2px white;
+	text-align: center;
+	color: #013554;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.campos {
+	width: 80%;
+	margin: 20px 30px;
+}
+
+input[type="text"] {
+	font-family: inherit;
+	font-size: 1.2rem;
+	font-weight: 300;
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: #a6eb124b;
+	color: #013554;
+	border: 1px solid #013554;
+	border-radius: var(--bradius);
+	outline: none;
+}
+
+input[type="submit"] {
+	font-family: inherit;
+	font-size: 1.3rem;
+	text-shadow: 1px 1px 1px white;
+	display: block;
+	width: 100%;
+	padding: 15px;
+	margin: 0 auto;
+	background-color: #a6eb1232;
+	color: #013554;
+	border-bottom: 30px;
+	border: 1px solid #013554;
+	border-radius: var(--bradius);
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	padding: 20px;
+	outline: none;
+	background-color: #a6eb12c1;
+	color: #013554;
+	border-radius: var(--bradius);
+}
+
+a {
+	margin-top:10px;
+	padding: 10px;
+	font-size: 1.5rem; 
+	text-decoration: none;
+	transition: color 0.3s ease;
+	background-color: yellow;
+	color: #0000FF;
+}
+
+a:hover {
+	background-color: #fff;
+	color: #013554;
+	padding: 20px;
+}
