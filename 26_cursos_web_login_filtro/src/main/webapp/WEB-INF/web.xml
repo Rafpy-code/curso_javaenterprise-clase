@@ -4,16 +4,7 @@
   <welcome-file-list>
     <welcome-file>login.html</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>FrontController</display-name>
-    <servlet-name>FrontController</servlet-name>
-    <servlet-class>controllers.FrontController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>FrontController</servlet-name>
-    <url-pattern>/FrontController</url-pattern>
-  </servlet-mapping>
+
   <filter>
     <display-name>FiltroLogin</display-name>
     <filter-name>FiltroLogin</filter-name>
