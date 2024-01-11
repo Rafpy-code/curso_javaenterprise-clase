@@ -1,6 +1,6 @@
 package model;
 
-import jakarta.persistence.Column;
+//import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,7 +15,7 @@ public class Producto {
 	private int idProducto;
 	private String nombre;
 	private String categoria;
-	// @Column(name = "nombre si es diferente en la tabla")
+	// @Column(name = "nombre que esta en la tabla si es diferente ")
 	private double precio;
 
 	public Producto() {

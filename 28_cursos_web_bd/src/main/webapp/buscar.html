@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- los siguiente metas son para no- cache -->
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<title>Cursos por precio</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+	<div>
+
+		<form action="FrontController?operation=doBuscar" method="post">
+			Introduce precio máximo:<input type="text" name="precio"
+				placeholder="Precio máximo de búsqueda"> <input
+				type="submit" value="Buscar"> <br>
+			<a href="FrontController?operation=toMenu">MENU</a>
+		</form>
+	</div>
+</body>
+</html>
