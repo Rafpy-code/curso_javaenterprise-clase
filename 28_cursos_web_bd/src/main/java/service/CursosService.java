@@ -51,10 +51,10 @@ public class CursosService {
 	}
 
 	public void modificarDuracion(String nombre, int nuevaDuracion) {
-		String jpql = "UPDATE Curso c SET duracion = ?2 WHERE (c.idCurso = ?1)";
+		String jpql = "update Curso c set duracion = ?2 where (c.idCurso = ?1)";
 		EntityManager em = getEntityManager();
 		Query query = em.createQuery(jpql);
-		query.setParameter(1, nombre);
+		
 		query.setParameter(2, nuevaDuracion);
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();

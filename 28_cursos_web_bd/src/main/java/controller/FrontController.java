@@ -13,6 +13,7 @@ public class FrontController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String op = request.getParameter("operation");
 		String urlView = "";
 		switch (op) {

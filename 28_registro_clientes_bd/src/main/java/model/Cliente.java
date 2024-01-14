@@ -13,7 +13,7 @@ public class Cliente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idCliente;
+	private Long idCliente;
 	private String nombre;
 	private String apellido;
 	@Column(name = "forma_pago")
@@ -23,7 +23,7 @@ public class Cliente {
 		super();
 	}
 
-	public Cliente(long idCliente, String nombre, String apellido, String formaPago) {
+	public Cliente(Long idCliente, String nombre, String apellido, String formaPago) {
 		super();
 		this.idCliente = idCliente;
 		this.nombre = nombre;
@@ -31,11 +31,11 @@ public class Cliente {
 		this.formaPago = formaPago;
 	}
 
-	public long getIdCliente() {
+	public Long getIdCliente() {
 		return idCliente;
 	}
 
-	public void setIdCliente(long idCliente) {
+	public void setIdCliente(Long idCliente) {
 		this.idCliente = idCliente;
 	}
 
