@@ -1,0 +1,4 @@
+[{"idCliente":5, "nombre":"Jhon", "apellido":"Doe", "forma_pago":"cr\u00e9dito"},
+ {"idCliente":6, "nombre":"Pepe", "apellido":"Leput", "forma_pago":"paypal"},
+ {"idCliente":7, "nombre":"Juan sin", "apellido":"Miedo", "forma_pago":"d\u00e9bito"},
+ {"idCliente":8, "nombre":"Perico de", "apellido":"los Palotes", "forma_pago":"paypal"}]

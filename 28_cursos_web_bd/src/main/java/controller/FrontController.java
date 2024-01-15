@@ -21,6 +21,10 @@ public class FrontController extends HttpServlet {
 			request.getRequestDispatcher("BuscarController").include(request, response);
 			urlView = "cursos.jsp";
 			break;
+		case "doListar":
+			request.getRequestDispatcher("ListarController").include(request, response);
+			urlView = "listaCursos.jsp";
+			break;
 		case "doEliminar":
 			request.getRequestDispatcher("EliminarController").include(request, response);
 			urlView = "menu.html";

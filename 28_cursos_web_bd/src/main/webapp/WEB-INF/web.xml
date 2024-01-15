@@ -13,4 +13,14 @@
     <filter-name>FiltroLogin</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarController</display-name>
+    <servlet-name>ListarController</servlet-name>
+    <servlet-class>controller.ListarController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarController</servlet-name>
+    <url-pattern>/ListarController</url-pattern>
+  </servlet-mapping>
 </web-app>

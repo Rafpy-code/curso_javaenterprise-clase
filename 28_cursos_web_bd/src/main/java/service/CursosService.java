@@ -2,6 +2,8 @@ package service;
 
 import java.util.List;
 
+import com.google.protobuf.Duration;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -37,6 +39,12 @@ public class CursosService {
 		query.setParameter(1, precioMax);
 		return query.getResultList();
 	}
+	
+	public List<Curso> listar(){
+		String jpql = "select c from Curso c";
+		TypedQuery<Curso> query = getEntityManager().createQuery(jpql, Curso.class);
+		return query.getResultList();
+	}
 
 	public void eliminarCurso(String nombre) {
 		String jpql = "delete from Curso c where c.nombre=?1";
@@ -50,12 +58,14 @@ public class CursosService {
 		tx.commit();
 	}
 
-	public void modificarDuracion(String nombre, int nuevaDuracion) {
-		String jpql = "update Curso c set duracion = ?2 where (c.idCurso = ?1)";
+	public void modificarDuracion(String nombre, int duracion, double precio) {
+		String jpql = "update Curso c set (c.nombre=?2, c.duracion = ?3, c.precio=4) where (c.idCurso = ?1)";
 		EntityManager em = getEntityManager();
 		Query query = em.createQuery(jpql);
 		
-		query.setParameter(2, nuevaDuracion);
+		query.setParameter(2, nombre);
+		query.setParameter(3, duracion);
+		query.setParameter(4, precio);
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		query.executeUpdate();
