@@ -1,6 +1,4 @@
-package controllers;
-
-import java.io.IOException;
+package controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -9,14 +7,17 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.CursosService;
 
-@WebServlet("/GuardarController")
-public class GuardarController extends HttpServlet {
+import java.io.IOException;
+
+public class ModificarDuracionController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		CursosService service = new CursosService();
-		service.nuevo(request.getParameter("nombre"), Integer.parseInt(request.getParameter("duracion")),
-				Double.parseDouble(request.getParameter("precio")));
+
+		service.modificarDuracion(request.getParameter("nombre"), Integer.parseInt(request.getParameter("duracion")));
+
 	}
 
 }

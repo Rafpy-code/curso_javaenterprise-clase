@@ -15,12 +15,11 @@
 	rel="stylesheet"
 	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 	crossorigin="anonymous">
-<title>Lista cursos por precio máximo</title>
+<title>Lista de todos los cursos disponibles</title>
 </head>
 <body>
 	<div class="container">
-		<h1 class="display-3">Cursos cuyo precio máximo es
-			${param.precio}</h1>
+		<h1 class="display-3 text-center">Cursos disponibles</h1>
 
 		<c:if test="${!empty requestScope.cursos}">
 			<table border="1" class="table table-striped">
@@ -30,6 +29,8 @@
 						<th>Nombre</th>
 						<th>Duración</th>
 						<th>Precio</th>
+						<th></th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -39,6 +40,10 @@
 							<td>${curso.nombre}</td>
 							<td>${curso.duracion}</td>
 							<td>${curso.precio}</td>
+							<td><a href="FrontController?operation=toModificarDuracion" type="submit" class="btn btn-warning">Editar</a></td>
+							<td><a href="FrontController?operation=toEliminar" type="submit" class="btn btn-danger">
+								Eliminar
+							</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -46,7 +51,7 @@
 		</c:if>
 		<c:if test="${empty requestScope.cursos}">
 			<div class="container">
-			<h1 class="display-3">No hay cursos con ese criterio</h1>
+			<h1  class="display-4 alert alert-danger text-center  mt-5" role="info">No hay cursos registrados</h1>
 			</div>
 		</c:if>
 		<a class="icon-link icon-link-hover"

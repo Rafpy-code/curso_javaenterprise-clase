@@ -12,22 +12,30 @@
 	rel="stylesheet"
 	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 	crossorigin="anonymous">
-<title>Eliminar Curso</title>
+<title>Modificar duracion del curso</title>
 </head>
 <body>
 	<div class="container">
-		<h1 class="display-3 text-center">Eliminar Curso</h1>
-		<form class="form" action="FrontController?operation=doEliminar" method="post">
+		<h1 class="display-3">Modificar duracion del curso</h1>
+		<form class="form" action="FrontController?operation=doModificarDuracion" method="post">
 			<div class="form-group">
-				<label class="form-label" for="nombre">Nombre del curso a eliminar:</label>
-				<input type="text" 
-					id="nombre"
-					class="form-control" 
-					name="nombre"
-					placeholder="Nombre del curso a eliminar"> 
-				</div>
-				<div class="form-group">
-				<button type="submit" class="btn btn-outline-dark mb-3 mt-3">Eliminar</button>
+			<label class="form-label" for="nombre">Nombre del curso a modificar:</label>
+			<input id="nombre"
+				class="form-control" 
+				type="text" 
+				name="nombre"
+				placeholder="Nombre del curso"> 
+			</div>
+			<div class="form-group">
+			<label class="form-label" for="duracion">Nueva duración del curso:</label>
+			<input id="duracion"
+				class="form-control"
+				type="text" 
+				name="duracion" 
+				placeholder="Duración del curso">
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-outline-dark mb-3 mt-3">Modificar</button>
 				<div>
 					<a href="menu.html"><img src="images/menu-1-svgrepo-com.svg"></a>
 				</div>
@@ -42,6 +50,5 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
 		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
 		crossorigin="anonymous"></script>
-
 </body>
 </html>

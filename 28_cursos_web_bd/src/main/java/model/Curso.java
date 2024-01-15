@@ -13,10 +13,8 @@ public class Curso {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idCurso;
-
 	@Column(name = "denominacion")
 	private String nombre;
-
 	private int duracion;
 	private double precio;
 
@@ -24,11 +22,20 @@ public class Curso {
 		super();
 	}
 
-	public Curso(int idCurso , String nombre, int duracion, double precio) {
+	public Curso(int idCurso, String nombre, int duracion, double precio) {
+		super();
 		this.idCurso = idCurso;
 		this.nombre = nombre;
 		this.duracion = duracion;
 		this.precio = precio;
+	}
+
+	public int getIdCurso() {
+		return idCurso;
+	}
+
+	public void setIdCurso(int idCurso) {
+		this.idCurso = idCurso;
 	}
 
 	public String getNombre() {

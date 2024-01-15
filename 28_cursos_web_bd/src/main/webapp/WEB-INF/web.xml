@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
-  <display-name>26_cursos_web_login_filtro</display-name>
+  <display-name>20_cursos_web</display-name>
   <welcome-file-list>
     <welcome-file>login.html</welcome-file>
   </welcome-file-list>
-
   <filter>
     <display-name>FiltroLogin</display-name>
     <filter-name>FiltroLogin</filter-name>
@@ -14,4 +13,24 @@
     <filter-name>FiltroLogin</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarController</display-name>
+    <servlet-name>ListarController</servlet-name>
+    <servlet-class>controller.ListarController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarController</servlet-name>
+    <url-pattern>/ListarController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ModificarDuracionController</display-name>
+    <servlet-name>ModificarDuracionController</servlet-name>
+    <servlet-class>controller.ModificarDuracionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModificarDuracionController</servlet-name>
+    <url-pattern>/ModificarDuracionController</url-pattern>
+  </servlet-mapping>
 </web-app>

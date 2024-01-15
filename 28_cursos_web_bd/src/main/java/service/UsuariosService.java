@@ -6,25 +6,31 @@ import java.util.List;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import jakarta.persistence.TypedQuery;
+import model.Curso;
 import model.Usuario;
 
 public class UsuariosService {
+
 	private EntityManager getEntityManager() {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("productosPU");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("cursosPU");
 		return factory.createEntityManager();
 	}
-	
-	List<Usuario> usuarios = new ArrayList<>(List.of(new Usuario("user0", "pwd0"), new Usuario("user1", "pwd1"),
-			new Usuario("user2", "pwd2"), new Usuario("user3", "pwd3"), new Usuario("user4", "pwd4")));
 
 	public boolean autenticar(String usuario, String password) {
-		return usuarios.stream().anyMatch(u -> 
-		u.getUsuario().equals(usuario) && u.getPassword().equals(password));
+																// ?1 ?2
+		String jpql = "select u from Usuario u where u.usuario = :usuario and u.password = :password";
+		EntityManager em = getEntityManager();
+		TypedQuery<Usuario> query = em.createQuery(jpql, Usuario.class);
+		query.setParameter("usuario", usuario);
+		query.setParameter("password", password);
+
+		try {
+			Usuario u = query.getSingleResult();
+			return u != null; // Autenticación exitosa si se encuentra un usuario
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false; // Usuario no encontrado
+		}
 	}
-
-
 }
-/*	public boolean autenticar(String usuario, String password) {
-		return usuarios.stream().anyMatch(u -> 
-		u.getUsuario().equals(usuario) && u.getPassword().equals(password));
-	}*/
