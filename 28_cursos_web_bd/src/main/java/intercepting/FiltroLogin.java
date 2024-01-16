@@ -17,38 +17,33 @@ import jakarta.servlet.http.HttpSession;
  */
 public class FiltroLogin extends HttpFilter implements Filter {
 
-	/**
-	 * @see Filter#destroy()
-	 */
 	public void destroy() {
 		// TODO Auto-generated method stub
 	}
 
-	/**
-	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
-	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		//si el usuario está autenticado (existe el atributo de sesión usuario)
-		//le dejamos pasar, sino le mandamos a la página de login.html
-		HttpSession sesion=((HttpServletRequest)request).getSession();
-		String usuario=(String)sesion.getAttribute("usuario");
-		if(usuario!=null) {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+		// si el usuario está autenticado (existe el atributo de sesión usuario)
+		// le dejamos pasar, sino le mandamos a la página de login.html
+		HttpSession sesion = ((HttpServletRequest) request).getSession();
+		String usuario = (String) sesion.getAttribute("usuario");
+		if (usuario != null) {
 			// pass the request along the filter chain
 			chain.doFilter(request, response);
-		}else {
-			//obtenemos la dirección de entrada y el valor del parámetro operation
-			//String path=((HttpServletRequest)request).getServletPath();
-			String param=((HttpServletRequest)request).getParameter("operation");
-			if(param!=null&&param.equals("doLogin")) {
+			return;
+		} else {
+			// obtenemos la dirección de entrada y el valor del parámetro operation
+			// String path=((HttpServletRequest)request).getServletPath();
+			String param = ((HttpServletRequest) request).getParameter("operation");
+			if (param != null && param.equals("doLogin")) {
 				chain.doFilter(request, response);
+				return;
+			} else {
+				request.getRequestDispatcher("login.html").forward(request, response);
 			}
-			request.getRequestDispatcher("login.html").forward(request, response);
 		}
 	}
 
-	/**
-	 * @see Filter#init(FilterConfig)
-	 */
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
 	}

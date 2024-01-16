@@ -23,4 +23,14 @@
     <servlet-name>ListarController</servlet-name>
     <url-pattern>/ListarController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ModificarDuracionController</display-name>
+    <servlet-name>ModificarDuracionController</servlet-name>
+    <servlet-class>controller.ModificarDuracionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModificarDuracionController</servlet-name>
+    <url-pattern>/ModificarDuracionController</url-pattern>
+  </servlet-mapping>
 </web-app>

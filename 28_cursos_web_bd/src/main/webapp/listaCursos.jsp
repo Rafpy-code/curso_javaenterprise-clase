@@ -40,8 +40,8 @@
 							<td>${curso.nombre}</td>
 							<td>${curso.duracion}</td>
 							<td>${curso.precio}</td>
-							<td><a type="submit" class="btn btn-warning">Editar</a></td>
-							<td><a type="submit" class="btn btn-danger">
+							<td><a href="FrontController?operation=toModificarDuracion" type="submit" class="btn btn-warning">Editar</a></td>
+							<td><a href="FrontController?operation=toEliminar" type="submit" class="btn btn-danger">
 								Eliminar
 							</a></td>
 						</tr>

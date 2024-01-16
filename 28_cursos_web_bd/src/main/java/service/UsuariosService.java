@@ -29,6 +29,7 @@ public class UsuariosService {
 			Usuario u = query.getSingleResult();
 			return u != null; // Autenticación exitosa si se encuentra un usuario
 		} catch (Exception e) {
+			e.printStackTrace();
 			return false; // Usuario no encontrado
 		}
 	}

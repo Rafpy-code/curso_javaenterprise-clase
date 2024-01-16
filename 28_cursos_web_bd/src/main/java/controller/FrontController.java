@@ -17,6 +17,18 @@ public class FrontController extends HttpServlet {
 		String op = request.getParameter("operation");
 		String urlView = "";
 		switch (op) {
+		case "doLogin":
+			request.getRequestDispatcher("LoginController").include(request, response);
+			urlView = (Boolean) request.getAttribute("autenticado") ? "menu.html" : "error.jsp";
+			break;
+		case "doGuardar":
+			request.getRequestDispatcher("GuardarController").include(request, response);
+			urlView = "nuevo.html";
+			break;
+		case "doModificarDuracion":
+			request.getRequestDispatcher("ModificarDuracionController").include(request, response);
+			urlView = "menu.html";
+			break;
 		case "doBuscar":
 			request.getRequestDispatcher("BuscarController").include(request, response);
 			urlView = "cursos.jsp";
@@ -28,14 +40,6 @@ public class FrontController extends HttpServlet {
 		case "doEliminar":
 			request.getRequestDispatcher("EliminarController").include(request, response);
 			urlView = "menu.html";
-			break;
-		case "doGuardar":
-			request.getRequestDispatcher("GuardarController").include(request, response);
-			urlView = "nuevo.html";
-			break;
-		case "doLogin":
-			request.getRequestDispatcher("LoginController").include(request, response);
-			urlView = (Boolean) request.getAttribute("autenticado") ? "menu.html" : "error.jsp";
 			break;
 		case "toNuevo":
 			urlView = "nuevo.html";
@@ -51,6 +55,9 @@ public class FrontController extends HttpServlet {
 			break;
 		case "toLogin":
 			urlView = "login.html";
+			break;
+		case "toModificarDuracion":
+			urlView = "modificarDuracion.html";
 			break;
 		}
 		request.getRequestDispatcher(urlView).forward(request, response);
