@@ -14,7 +14,7 @@ public class LoginController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		UsuariosService service = new UsuariosService();
 
 		boolean result = service.autenticar(request.getParameter("usuario"), request.getParameter("password"));

@@ -12,7 +12,7 @@
 	rel="stylesheet"
 	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 	crossorigin="anonymous">
-<title>Login</title>
+<title>Registro</title>
 </head>
 <body>
 	<div class="container mt-5">
@@ -20,12 +20,9 @@
         	<div class="col-md-6">
             	<div class="card login-form">
                 	<div class="card-header">
-	                	<h1 class="display-3 mt-3 text-center">Log in</h1>
-	                	<div class="d-grid gap-2">
-							<a class="btn btn-outline-dark" role="button" href="FrontController?operation=toRegistrar">¿Aún no estás registrado?</a> 
-						</div>
+	                	<h1 class="display-3 mt-3 text-center">Registro nuevo usuario</h1>
 	            	</div>
-						<form class="form mx-3" action="FrontController?operation=doLogin"
+						<form class="form mx-3" action="FrontController?operation=doRegistrar"
 								method="post">
 							<div class="form-group mt-3">
 								<label class="form-label" for="usuario">Usuario:</label>
@@ -43,10 +40,23 @@
 									placeholder="Ingrese su contraseña" />
 							</div>
 							<div class="form-group mt-3">
+								<label class="form-label"  for="password1">Repita su Password:</label>
+								<input type="password1" 
+									id="password1"
+									class="form-control"
+									name="password1" 
+									placeholder="Repita su contraseña" />
+							</div>
+							<div class="form-group mt-3">
 								<button type="submit" class="btn btn-outline-dark mb-3 mt-3">Ingresar</button>
 							</div>
 							</div>
 						</form>
+						<div class="mt-5">
+							<a class="btn btn-outline" role="button"  href="FrontController?operation=toLogin">
+								LOGIN
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
-public class FiltroLogin extends HttpFilter implements Filter {
+public class FiltroRegistro extends HttpFilter implements Filter {
 	private static final long serialVersionUID = 1L;
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -20,13 +20,13 @@ public class FiltroLogin extends HttpFilter implements Filter {
 		HttpSession sesion = ((HttpServletRequest) request).getSession();
 		String usuario = (String) sesion.getAttribute("usuario");
 		String param = ((HttpServletRequest) request).getParameter("operation");
-
+/*
 		// Para registro de usuarios NO ME DEJA PASAR DEL LOGIN
-		if (param != null && param.equals("toRegistrar")) {
+		if (param != null && param.equals("doRegistrar")) {
 			request.getRequestDispatcher("registrar.html").forward(request, response);
 			return;
 		}
-
+*/
 		if (usuario != null) {
 			// pass the request along the filter chain
 			chain.doFilter(request, response);
