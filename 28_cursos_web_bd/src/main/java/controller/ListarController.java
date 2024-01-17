@@ -12,6 +12,7 @@ import service.CursosService;
 import java.io.IOException;
 import java.util.List;
 
+@WebServlet("/ListarController")
 public class ListarController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

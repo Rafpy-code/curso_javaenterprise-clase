@@ -9,6 +9,7 @@ import service.CursosService;
 
 import java.io.IOException;
 
+@WebServlet("/ModificarDuracionController")
 public class ModificarDuracionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

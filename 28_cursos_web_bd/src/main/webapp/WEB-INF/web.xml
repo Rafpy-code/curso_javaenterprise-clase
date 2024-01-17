@@ -4,7 +4,8 @@
   <welcome-file-list>
     <welcome-file>login.html</welcome-file>
   </welcome-file-list>
-  <filter>
+  <!-- FILTRO INTERCEPTING -->
+<!--   <filter>
     <display-name>FiltroLogin</display-name>
     <filter-name>FiltroLogin</filter-name>
     <filter-class>intercepting.FiltroLogin</filter-class>
@@ -13,24 +14,5 @@
     <filter-name>FiltroLogin</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ListarController</display-name>
-    <servlet-name>ListarController</servlet-name>
-    <servlet-class>controller.ListarController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ListarController</servlet-name>
-    <url-pattern>/ListarController</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ModificarDuracionController</display-name>
-    <servlet-name>ModificarDuracionController</servlet-name>
-    <servlet-class>controller.ModificarDuracionController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ModificarDuracionController</servlet-name>
-    <url-pattern>/ModificarDuracionController</url-pattern>
-  </servlet-mapping>
+  -->
 </web-app>

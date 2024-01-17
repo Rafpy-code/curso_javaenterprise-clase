@@ -13,13 +13,18 @@ public class FrontController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		String op = request.getParameter("operation");
 		String urlView = "";
 		switch (op) {
 		case "doLogin":
 			request.getRequestDispatcher("LoginController").include(request, response);
 			urlView = (Boolean) request.getAttribute("autenticado") ? "menu.html" : "error.jsp";
+			break;
+		case "doRegistrar":
+			System.out.println("Llega a doRegistrar del FrontController");
+			request.getRequestDispatcher("RegistrarController").include(request, response);
+			urlView = (Boolean) request.getAttribute("registrado") ? "login.html" : "error.jsp";
 			break;
 		case "doGuardar":
 			request.getRequestDispatcher("GuardarController").include(request, response);
@@ -52,6 +57,10 @@ public class FrontController extends HttpServlet {
 			break;
 		case "toMenu":
 			urlView = "menu.html";
+			break;
+		case "toRegistrar":
+			System.out.println("Llega a toRegistrar del FrontController");
+			urlView = "registrar.html";
 			break;
 		case "toLogin":
 			urlView = "login.html";

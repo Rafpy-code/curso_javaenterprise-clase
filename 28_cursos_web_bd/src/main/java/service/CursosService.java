@@ -81,16 +81,3 @@ public class CursosService {
 	}
 
 }
-
-/*
- * public void modificarDuracion(String nombre, int duracion, double precio) {
- * String jpql =
- * "update Curso c set (c.nombre=?2, c.duracion = ?3, c.precio=4) where (c.idCurso = ?1)"
- * ; EntityManager em = getEntityManager(); Query query = em.createQuery(jpql);
- * 
- * query.setParameter(2, nombre); query.setParameter(3, duracion);
- * query.setParameter(4, precio); EntityTransaction tx = em.getTransaction();
- * tx.begin(); query.executeUpdate(); tx.commit(); } public Curso
- * buscarCurso(int idCurso) { return getEntityManager().find(Curso.class,
- * idCurso); }
- */
