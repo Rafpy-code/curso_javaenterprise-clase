@@ -16,19 +16,19 @@ public class FiltroLogin extends HttpFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-
+		
 		HttpSession sesion = ((HttpServletRequest) request).getSession();
 		String usuario = (String) sesion.getAttribute("usuario");
 		String param = ((HttpServletRequest) request).getParameter("operation");
 
-		// Para registro de usuarios NO ME DEJA PASAR DEL LOGIN
 		if (param != null && param.equals("toRegistrar")) {
+			System.out.println("Llega al FiltroController");
+
 			request.getRequestDispatcher("registrar.html").forward(request, response);
 			return;
 		}
 
 		if (usuario != null) {
-			// pass the request along the filter chain
 			chain.doFilter(request, response);
 			return;
 		} else {
