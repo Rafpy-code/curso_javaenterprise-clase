@@ -17,67 +17,20 @@ public class CursosService {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("cursosPU");
 		return factory.createEntityManager();
 	}
-
-	private Curso buscarPorDenominacion(String nombre) {
-		String jpql = "select c from Curso c where c.nombre=?1";
+	
+	public List<Curso> listarPorPrecioMax(double precioMax) {
+		String jpql = "select c from Curso c where c.precio <= :precioMax";
 		TypedQuery<Curso> query = getEntityManager().createQuery(jpql, Curso.class);
-		query.setParameter(1, nombre);
-		try { 
-			return query.getSingleResult();
-		} catch (NoResultException nre) {
-			return null;
-		}
-		// List<curso> cursos = query.getResultList();
-		// return cursos.size()>0?cursos.get(0):null;
-	}
-
-	public boolean agregarCurso(String nombre, int duracion, double precio) {
-		if (buscarPorDenominacion(nombre) == null) {
-			Curso c = new Curso(0, nombre, duracion, precio);
-			EntityManager em = getEntityManager();
-			EntityTransaction tx = em.getTransaction();
-			tx.begin();
-			em.persist(c);
-			tx.commit();
-			return true;
-		}
-		return false;
-	}
-
-	public List<Curso> preciosCursoMax(double precioMax) {
-		String jpql = "select c from Curso c where c.precio <= ?1";
-		TypedQuery<Curso> query = getEntityManager().createQuery(jpql, Curso.class);
-		query.setParameter(1, precioMax);
+		query.setParameter("precioMax", precioMax);
 		return query.getResultList();
 	}
 
-	public List<Curso> listar() {
-		String jpql = "select c from Curso c";
+	public List<Curso> listarPorDuracion(int duracinMin, int duracionMax) {
+		String jpql = "select c from Curso c wher c.duracion >= :duracinMin and c.duracion <= :duracionMax";
 		TypedQuery<Curso> query = getEntityManager().createQuery(jpql, Curso.class);
+		query.setParameter("duracinMin", duracinMin);
+		query.setParameter("duracionMax", duracionMax);
 		return query.getResultList();
-	}
-
-	public void eliminarCurso(String nombre) {
-		String jpql = "delete from Curso c where c.nombre=?1";
-		EntityManager em = getEntityManager();
-		Query query = em.createQuery(jpql);
-		query.setParameter(1, nombre);
-		EntityTransaction tx = em.getTransaction();
-		tx.begin();
-		query.executeUpdate();
-		tx.commit();
-	}
-
-	public void modificarDuracion(String nombre, int nuevaDuracion) {
-		String jpql = "update Curso c set c.duracion = ?1 where c.nombre = ?2";
-		EntityManager em = getEntityManager();
-		Query query = em.createQuery(jpql);
-		query.setParameter(1, nuevaDuracion);
-		query.setParameter(2, nombre);
-		EntityTransaction tx = em.getTransaction();
-		tx.begin();
-		query.executeUpdate();
-		tx.commit();
 	}
 
 }
