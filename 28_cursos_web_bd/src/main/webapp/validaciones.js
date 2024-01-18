@@ -22,13 +22,16 @@ const validarNuevo = ()=>{
 
 }
 
-const validarNumeros = (numero)=>{
+const validarNumeros = (e,numero)=>{
     if (isNaN(numero)) {
         return true;
     } else {
+        e.preventDefault;
         return false;
     }
 }
+
+
 
 const validarCurso = (txt)=>{
     if (txt == "php") {
