@@ -9,7 +9,10 @@ import model.Producto;
 import service.ProductosService;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
+
+import com.google.gson.Gson;
 
 @WebServlet("/BuscarPorCategoriaController")
 public class BuscarPorCategoriaController extends HttpServlet {
@@ -20,7 +23,13 @@ public class BuscarPorCategoriaController extends HttpServlet {
 		ProductosService productosService = new ProductosService();
 		
 		List<Producto> productos=productosService.buscarPorCategoria(request.getParameter("categoria"));
-		request.setAttribute("productos", productos);
+		//Ahora va directo al html en un json
+		//request.setAttribute("productos", productos);
+		
+		PrintWriter out= response.getWriter();
+		response.setContentType("application/json");
+		Gson gson = new Gson();
+		out.println(gson.toJson(productos));
 	}
 
 }

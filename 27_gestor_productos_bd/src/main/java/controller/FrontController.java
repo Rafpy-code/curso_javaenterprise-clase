@@ -26,7 +26,7 @@ public class FrontController extends HttpServlet {
 			urlView = "producto.jsp";
 			break;
 		case "doBuscarPorCategoria":
-			request.getRequestDispatcher("BuscarPorNombreController");
+			request.getRequestDispatcher("BuscarPorNombreController").include(request, response);
 			urlView = "productosPorCategoria.jsp";
 			break;
 		case "doEliminarPorNombre":
