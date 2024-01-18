@@ -43,3 +43,9 @@ a:hover {
 	background: crimson;
 	color: white;
 }}
+
+table, th, td{
+	border: 1px solid crimson;
+	margin: 15px auto;
+	text-align: right;
+}

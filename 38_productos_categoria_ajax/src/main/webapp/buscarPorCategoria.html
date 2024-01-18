@@ -8,19 +8,19 @@
 <meta http-equiv="Pragma" content="no-cache">
 <title>Lista de productos por Categoría</title>
 <link rel="stylesheet" href="estilos.css" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script defer type="text/javascript" src="buscarPorCategoria.js"></script>
 </head>
 <body>
 	<div>
 		<h1>Lista de productos por Categoría con Ajax</h1>
-		<!-- 		<form action="FrontController?operation=doBuscarPorCategoria" method="post"> -->
-		<input type="text" name="categoria"
-			placeholder="Nombre de la categoría"> <input type="button"
+		<input type="text" 
+			id="categoria"
+			placeholder="Nombre de la categoría"> 
+		<input type="button"
 			id="btnMostrar" value="Buscar Productos">
-		</form>
-		<br> <a href="FrontController?operation=toInicio">VOLVER</a>
+		</form>		
 	</div>
+	<div id="tbProductos"></div>
 </body>
 </html>
