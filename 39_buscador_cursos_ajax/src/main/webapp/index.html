@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Last-Modified" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <title>Lista de productos por Categoría</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script defer type="text/javascript" src="buscador.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Buscador de Cursos</h1>
+      <div>
+        <p>
+          Buscar por precio máximo
+          <input type="radio" name="radioB" id="porPrecio" value="0" checked />
+        </p>
+        <p>
+          Buscar por rango de duración
+          <input type="radio" name="radioB" id="porDuracion" value="1" />
+        </p>
+        <!-- <input type="button" id="btnMostrar" value="Buscar Productos" /> -->
+      </div>
+      <div>
+        <div id="formPrecio" style="display: none">
+          <p>
+            <label for="precioMaximo">Precio maximo</label>
+            <input type="text" name="precioMaximo" id="precioMaximo" />
+          </p>
+          <p>
+            <button type="button" id="btnBuscarPrecio">Buscar</button>
+          </p>
+        </div>
+
+        <div id="formDuracion" style="display: none">
+          <p>
+            <label for="duracionMin">Duración mínima</label>
+            <input type="text" name="duracionMin" id="duracionMin" />
+          </p>
+          <p>
+            <label for="duracionMax">Duración máxima</label>
+            <input type="text" name="duracionMax" id="duracionMax" />
+          </p>
+          <p>
+            <button type="button" id="btnBuscarDuracion">Buscar</button>
+          </p>
+        </div>
+      </div>
+      <div></div>
+    </div>
+    <div id="tablaCursos"></div>
+  </body>
+</html>
