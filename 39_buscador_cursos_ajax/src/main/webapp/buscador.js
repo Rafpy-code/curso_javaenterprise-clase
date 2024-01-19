@@ -45,7 +45,7 @@ $(document).ready(function () {
         precioMaximo: $("#precioMaximo").val(),
       },
       function (data) {
-        let tabla = `<table><thead><th>NOMBRE</th><th>DURACIÓN</th><th>PRECIO</th></thead><tbody>`;
+        let tabla = `<table class="table table-success table-striped"><thead><tr><th>NOMBRE</th><th>DURACIÓN</th><th>PRECIO</th></tr></thead><tbody>`;
         $.each(data, function (i, curso) {
           tabla += `<tr><td>${curso.nombre}</td><td>${curso.duracion}</td><td>${curso.precio}</td></tr>`;
         });
@@ -66,7 +66,7 @@ $(document).ready(function () {
         duracionMax: $("#duracionMax").val(),
       },
       function (data) {
-        let tabla = `<table><thead><th>NOMBRE</th><th>DURACIÓN</th><th>PRECIO</th></thead><tbody>`;
+        let tabla = `<table class="table table-success table-striped"><thead><tr><th>NOMBRE</th><th>DURACIÓN</th><th>PRECIO</th></tr></thead><tbody>`;
         $.each(
           data,
 
