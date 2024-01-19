@@ -26,9 +26,9 @@ public class CursosService {
 	}
 
 	public List<Curso> listarPorDuracion(int duracinMin, int duracionMax) {
-		String jpql = "select c from Curso c wher c.duracion >= :duracinMin and c.duracion <= :duracionMax";
+		String jpql = "select c from Curso c where c.duracion >= :duracionMin and c.duracion <= :duracionMax";
 		TypedQuery<Curso> query = getEntityManager().createQuery(jpql, Curso.class);
-		query.setParameter("duracinMin", duracinMin);
+		query.setParameter("duracionMin", duracinMin);
 		query.setParameter("duracionMax", duracionMax);
 		return query.getResultList();
 	}

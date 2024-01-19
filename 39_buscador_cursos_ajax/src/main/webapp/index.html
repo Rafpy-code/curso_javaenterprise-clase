@@ -6,52 +6,53 @@
     <meta http-equiv="Last-Modified" content="0" />
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
-    <title>Lista de productos por Categoría</title>
-    <link rel="stylesheet" href="estilos.css" />
+    <title>Lista de Cursos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script defer type="text/javascript" src="buscador.js"></script>
   </head>
   <body>
-    <div>
-      <h1>Buscador de Cursos</h1>
+    <div class="container">
+      <h1 class="display-3">Buscador de Cursos</h1>
       <div>
-		<p>
-			Buscar por precio máximo
-			<input type="radio" name="rango" id="porPrecio" value="0" checked="checked"/>
-		</p>
-		<p>
-			Buscar por rango de duración
-			<input type="radio" name="rango" id="porDuracion" value="1" />
-		</p>
-        <input type="button" id="btnMostrar" value="Buscar Productos" />
+        <p>
+          Buscar por precio máximo
+          <input type="radio" name="radioB" id="porPrecio" value="0" checked />
+        </p>
+        <p>
+          Buscar por rango de duración
+          <input type="radio" name="radioB" id="porDuracion" value="1" />
+        </p>
+        <!-- <input type="button" id="btnMostrar" value="Buscar Productos" /> -->
       </div>
-	  <div>
-		<form id="formPrecio" method="get">
-			<p>
-				<label for="precioMaximo">Precio maximo</label>
-				<input type="text" name="precioMaximo" id="precioMaximo">
-			</p>
-			<p>
-				<button type="button" id="btnBuscarPrecio">Buscar</button>
-			</p>
-		</form>
-		
-		<form id="formDuracion" method="get">
-			<p>
-				<label for="duracionMin">Precio maximo</label>
-				<input type="text" name="duracionMin" id="duracionMin">
-			</p>
-			<p>
-				<label for="duracionMax">Precio maximo</label>
-				<input type="text" name="duracionMax" id="duracionMax">
-			</p>
-			<p>
-				<button type="button" id="btnBuscarDuracion">Buscar</button>
-			</p>
-		</form>
-	  </div>
-	  <div></div>
+      <div>
+        <div id="formPrecio" style="display: none">
+          <p>
+            <label for="precioMaximo">Precio maximo</label>
+            <input type="text" name="precioMaximo" id="precioMaximo" min="0" placeholder="1234567890" />
+          </p>
+          <p>
+            <button type="button" id="btnBuscarPrecio">Buscar</button>
+          </p>
+        </div>
+
+        <div id="formDuracion" style="display: none">
+          <p>
+            <label for="duracionMin">Duración mínima</label>
+            <input type="text" name="duracionMin" id="duracionMin" min="0" placeholder="1234567890"/>
+          </p>
+          <p>
+            <label for="duracionMax">Duración máxima</label>
+            <input type="text" name="duracionMax" id="duracionMax" min="0" placeholder="1234567890"/>
+          </p>
+          <p>
+            <button type="button" id="btnBuscarDuracion">Buscar</button>
+          </p>
+        </div>
+      </div>
     </div>
-    <div id="tablaCursos"></div>
+    <div id="tablaCursos" class="container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
   </body>
 </html>

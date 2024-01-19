@@ -9,7 +9,10 @@ import model.Curso;
 import service.CursosService;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
+
+import com.google.gson.Gson;
 
 @WebServlet("/BuscarPorPrecioController")
 public class BuscarPorPrecioController extends HttpServlet {
@@ -17,9 +20,11 @@ public class BuscarPorPrecioController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		CursosService service = new CursosService();
-		List<Curso> cursos = service.listarPorPrecioMax(Double.parseDouble(request.getParameter("precio")));
-
-		request.setAttribute("cursos", cursos);
+		List<Curso> cursos = service.listarPorPrecioMax(Double.parseDouble(request.getParameter("precioMaximo")));
+		PrintWriter out= response.getWriter();
+		response.setContentType("application/json");
+		Gson gson = new Gson();
+		out.println(gson.toJson(cursos));
 	}
 
 }
