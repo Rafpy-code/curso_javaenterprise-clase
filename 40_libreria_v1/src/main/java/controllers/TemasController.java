@@ -20,8 +20,7 @@ public class TemasController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LibrosService service = new LibrosService();
-		List<Tema> temas = service.getTemas();
-		
+		List<Tema> temas = service.getTemas();		
 		request.setAttribute("temas", temas);
 		
 	}

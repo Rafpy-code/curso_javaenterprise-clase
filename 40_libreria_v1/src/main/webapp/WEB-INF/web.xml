@@ -4,14 +4,16 @@
   <welcome-file-list>
     <welcome-file>entrar.html</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>LibrosController</display-name>
-    <servlet-name>LibrosController</servlet-name>
-    <servlet-class>controllers.LibrosController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>LibrosController</servlet-name>
-    <url-pattern>/LibrosController</url-pattern>
-  </servlet-mapping>
+  
+  <!-- Me da error de cors, añado esto -->
+
+  <filter>
+    <filter-name>CorsFilter</filter-name>
+    <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>CorsFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>

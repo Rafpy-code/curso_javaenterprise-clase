@@ -22,8 +22,16 @@ public class LibrosService {
 		return query.getResultList();
 	}
 	
-	public List<Libro> getLibros(int id) {
-		String jpql = "select l from Libro l where l.idTema <= :id";
+	public List<Libro> getAllLibros() {
+		System.out.println("getAllLibros())");
+		String jpql = "select l from Libro l";
+		TypedQuery<Libro> query = getEntityManager().createQuery(jpql, Libro.class);
+		return query.getResultList();
+	}
+	
+	public List<Libro> getLibrosPorIdTema(int id) {
+		System.out.println("getLibrosPorIdTema(Integer id)");
+		String jpql = "select l from Libro l where l.idTema = :id";
 		TypedQuery<Libro> query = getEntityManager().createQuery(jpql, Libro.class);
 		query.setParameter("id", id);
 		return query.getResultList();

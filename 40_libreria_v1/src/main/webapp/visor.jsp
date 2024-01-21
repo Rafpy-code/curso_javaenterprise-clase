@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="model.Tema"%>
 <%@taglib uri="jakarta.tags.core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -10,24 +10,27 @@
 <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <title>Selector de temas</title>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/estilos.css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script defer type="text/javascript" src="buscador.js"></script>
+<script defer type="text/javascript" src="lanzador.js"></script>
 </head>
-<body>
-	<div class="container">
-	<h1 class="">Seleccione un tema</h1>
-		<%-- <c:if test="${!empty requestScope.temas}"> --%>
-		<select #isbn>
-		<option value="0">Todos los temas</option>
-				<c:forEach var="tema" items="${requestScope.temas}">	
-					<option value="${tema.idTema}">${tema.tema}</option>		
-			</c:forEach>
+<body bg-slate-200>
+	<c:if test="${!empty requestScope.temas}">
+		<div class="text-center w-64 mt-2 p-5">
+			<select name="seleccion" id="idTema" title="Elegir libros"
+				class="text-center mx-auto text-2xl font-bold text-white block w-full px-4 py-4 border rounded-md bg-amber-400 focus:outline-none focus:border-amber-400">
+				<option>ELIGE UNA OPCIÓN</option>
+				<option value="0">Todos los temas</option>
+				<c:forEach var="t" items="${requestScope.temas}">
+					<option value="${t.idTema}">${t.tema}</option>
+				</c:forEach>
 			</select>
-		<%-- </c:if> --%>
+		</div>
+	</c:if>
+	<div class="container rounded-md mx-auto p-5">
+		<table id="listaLibros"
+			class="table-fixed w-full rounded-md bg-amber-400 mx-auto"></table>
 	</div>
-	<div #listaLibros></div>
 </body>
 </html>

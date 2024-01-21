@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name="temas")
+@Table(name="libros")
 public class Libro {
 	@Id
 	private String isbn;

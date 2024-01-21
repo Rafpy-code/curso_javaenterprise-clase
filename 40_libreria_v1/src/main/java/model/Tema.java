@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Tema {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idTema;
+	private Integer idTema;
 	private String tema;
 
 
