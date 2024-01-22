@@ -9,6 +9,7 @@ $(document).ready(function() {
 	$("select[name='seleccion']").change(function() {
 		//let opcionSeleccionada = $(this).val();
 		//console.log("Opción seleccionada:", opcionSeleccionada);
+		$("#spinner").show;
 		$("#idTema").click(lanzarPeticionLibros());
 	});
 
@@ -23,6 +24,7 @@ $(document).ready(function() {
 				tabla += `<tr class="border-2 p-2"><td>${libro.isbn}</td><td>${libro.titulo}</td><td>${libro.paginas}</td><td>${libro.precio}</td></tr>`;
 			});
 			tabla += `</tbody></table>`;
+			$("#spinner").hide();
 			$("#listaLibros").html(tabla);
 		}
 		);
