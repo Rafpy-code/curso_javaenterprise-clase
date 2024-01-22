@@ -40,11 +40,8 @@ public class LibrosService {
 		return query.getResultList();
 	}
 	
-	public List<Libro> getLibroPorIsbn(int isbn) {
-		String jpql = "select l from Libro l where l.isbn = :isbn";
-		TypedQuery<Libro> query = getEntityManager().createQuery(jpql, Libro.class);
-		query.setParameter("isbn", isbn);
-		return (List<Libro>) query.getResultList().get(0);
+	public Libro getLibroPorIsbn(int isbn) {
+		return getEntityManager().find(Libro.class, isbn);
 	}
 	
 	public List<Libro> comprarLibros(int isbn){

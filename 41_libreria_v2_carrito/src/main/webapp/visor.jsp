@@ -35,10 +35,12 @@
 			class="table-fixed w-full rounded-md bg-amber-400 mx-auto"></table>
 	</div>
 
-	<div id="carrito" class="container rounded-md mx-auto p-5">
-		<ol>
-			<li>Libro 1</li>
-		</ol>
+	<div class="container rounded-md mx-auto p-5">
+		<h2 class="text-center text-2xl">Carrito</h2>
+		<table id="listaLibrosComprados"
+			class="table-fixed w-full rounded-md bg-amber-400 mx-auto">
+	
+		</table>
 	</div>
 </body>
 </html>

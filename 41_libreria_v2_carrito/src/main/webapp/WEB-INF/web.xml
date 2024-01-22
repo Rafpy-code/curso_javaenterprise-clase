@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
-  <display-name>40_libreria_v1</display-name>
+  <display-name>41_libreria_v2_carrito</display-name>
   <welcome-file-list>
     <welcome-file>entrar.html</welcome-file>
   </welcome-file-list>
@@ -12,14 +12,4 @@
     <filter-name>CorsFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ComprarLibrosController</display-name>
-    <servlet-name>ComprarLibrosController</servlet-name>
-    <servlet-class>controllers.ComprarLibrosController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ComprarLibrosController</servlet-name>
-    <url-pattern>/ComprarLibrosController</url-pattern>
-  </servlet-mapping>
 </web-app>

@@ -1,0 +1,16 @@
+{
+  "name": "40_libreria_v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwindcssDev":"npx tailwindcss -i ./src/main/webapp/css/tailwindcss.css -o ./src/main/webapp/css/estilos.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
