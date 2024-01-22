@@ -1,15 +1,13 @@
-$(document).ready(function() {
-	window.addEventListener('load', animacion);
-	//Para la animación de inicio
-	const homeBtn = $("#entrar");
-	function animacion(){
-    const TLFADE = gsap.timeline();
-    TLFADE.from(homeBtn, {autoAlpha: 0, y: -500, delay: 0.2});
+window.addEventListener('load', animacion);
+//Para la animación de inicio
+const homeBtn = $("#entrar");
+function animacion() {
+	const TLFADE = gsap.timeline();
+	TLFADE.from(homeBtn, { autoAlpha: 0, y: -500, delay: 0.2 });
 }
-	
+$(document).ready(function() {
 	$("select[name='seleccion']").change(function() {
-		//console.log("dentro del change, antes de lazar la petición")
-		let opcionSeleccionada = $(this).val();
+		//let opcionSeleccionada = $(this).val();
 		//console.log("Opción seleccionada:", opcionSeleccionada);
 		$("#idTema").click(lanzarPeticionLibros());
 	});
@@ -25,7 +23,7 @@ $(document).ready(function() {
 				tabla += `<tr class="border-2 p-2"><td>${libro.isbn}</td><td>${libro.titulo}</td><td>${libro.paginas}</td><td>${libro.precio}</td></tr>`;
 			});
 			tabla += `</tbody></table>`;
-			$("#listaLibros").html(tabla); 
+			$("#listaLibros").html(tabla);
 		}
 		);
 	}

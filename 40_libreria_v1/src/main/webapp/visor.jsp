@@ -29,7 +29,7 @@
 		</div>
 	</c:if>
 	<div class="container rounded-md mx-auto p-5">
-		<table id="listaLibros"
+		<table id="listaLibros" style="display:none"
 			class="table-fixed w-full rounded-md bg-amber-400 mx-auto"></table>
 	</div>
 </body>
