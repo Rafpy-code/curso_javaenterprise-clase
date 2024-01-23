@@ -22,10 +22,10 @@ public class QuitarCarritoController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LibrosService service = new LibrosService();
-		int posicion = Integer.parseInt(request.getParameter("posicion"));
 		HttpSession sesion = request.getSession();
-		
+		int posicion = Integer.parseInt(request.getParameter("posicion"));
 		List <Libro> carrito = new ArrayList<Libro>();
+		
 		if(sesion.getAttribute("carrito")!=null) {
 			carrito = (List<Libro>)sesion.getAttribute("carrito");
 			carrito.remove(posicion);

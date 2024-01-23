@@ -25,6 +25,7 @@ public class AgregarCarritoController extends HttpServlet {
 		HttpSession sesion = request.getSession();
 		Libro libro = service.getLibroPorIsbn(Integer.parseInt(request.getParameter("isbn")));
 		List <Libro> carrito = new ArrayList<Libro>();
+		
 		if(sesion.getAttribute("carrito")!=null) {
 			carrito = (List<Libro>)sesion.getAttribute("carrito");
 		}

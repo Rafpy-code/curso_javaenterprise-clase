@@ -35,7 +35,7 @@
 			class="table-fixed w-full rounded-md bg-amber-400 mx-auto"></table>
 	</div>
 
-	<div class="container rounded-md mx-auto p-5">
+	<div id="carritoVista" class="container rounded-md mx-auto p-5">
 		<h2 class="text-center text-2xl">Carrito</h2>
 		<table id="listaLibrosComprados"
 			class="table-fixed w-full rounded-md bg-amber-400 mx-auto">
