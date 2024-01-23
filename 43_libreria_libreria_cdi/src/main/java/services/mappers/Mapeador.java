@@ -5,6 +5,7 @@ import dtos.TemaDto;
 import model.Libro;
 import model.Tema;
 import services.LibrosService;
+import services.LibrosServiceImpl;
 
 public class Mapeador {
 
@@ -13,7 +14,7 @@ public class Mapeador {
 	}
 
 	public static LibroDto libroEntityToDto(Libro libro) {
-		LibrosService service = new LibrosService();
+		LibrosService service = new LibrosServiceImpl();
 		return new LibroDto(
 				libro.getIsbn(), 
 				libro.getTitulo(), 

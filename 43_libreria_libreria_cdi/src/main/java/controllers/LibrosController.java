@@ -1,5 +1,6 @@
 package controllers;
 
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -20,9 +21,10 @@ import dtos.LibroDto;
 public class LibrosController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@Inject
+	LibrosService service;
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		LibrosService service = new LibrosService();
 		Integer idTema = Integer.parseInt(request.getParameter("seleccionado"));
 		List<LibroDto> libros;
 		if (idTema == 0) {

@@ -1,5 +1,6 @@
 package controllers;
 
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -20,8 +21,9 @@ import dtos.TemaDto;
 public class TemasController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@Inject
+	LibrosService service;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		LibrosService service = new LibrosService();
 		List<TemaDto> temas = service.getTemas();		
 		request.setAttribute("temas", temas);
 		

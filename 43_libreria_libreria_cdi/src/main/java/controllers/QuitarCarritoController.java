@@ -1,5 +1,6 @@
 package controllers;
 
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -22,8 +23,9 @@ import dtos.LibroDto;
 public class QuitarCarritoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@Inject
+	LibrosService service;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		LibrosService service = new LibrosService();
 		HttpSession sesion = request.getSession();
 		int posicion = Integer.parseInt(request.getParameter("posicion"));
 		List <LibroDto> carrito = new ArrayList<LibroDto>();
