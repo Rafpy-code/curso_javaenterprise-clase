@@ -35,7 +35,7 @@
         
         
         <property name="java-output-path" value="/40_libreria_v1/build/classes"/>
-        <property name="context-root" value="43_libreria_libreria_cdi"/>
+        <property name="context-root" value="44_libreria_v3_registro_cdi"/>
                                             
     
     
